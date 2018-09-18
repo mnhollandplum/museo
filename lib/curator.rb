@@ -51,12 +51,12 @@ class Curator
   end
 
   def photographs_taken_by_artists_from(country)
-    artists_id_by_country = @artists.map do |artist|
+    artist_id_by_country = @artists.map do |artist|
       if artist.country == country
         artist.id
       end
     end.compact
-    artists_id_by_country.map do |id|
+    artist_id_by_country.map do |id|
         find_photograph_by_artist_id(id)
     end.flatten
   end
@@ -66,5 +66,4 @@ class Curator
       photo.artist_id == id
     end
   end
-
 end
