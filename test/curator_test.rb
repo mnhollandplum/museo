@@ -348,15 +348,12 @@ class CuratorTest < Minitest::Test
     curator.add_artist(artist_2)
     curator.add_artist(artist_3)
 
+    assert_equal "2", curator.find_photograph_by_artist_id("2").first.id
+
     assert_equal "Moonrise, Hernandez", curator.photographs_taken_by_artists_from("United States").first.name
 
     assert_equal "Child with Toy Hand Grenade in Central Park", curator.photographs_taken_by_artists_from("United States").last.name
 
     assert_equal [], curator.photographs_taken_by_artists_from("Argentina")
-
-
-
-
-
   end
 end

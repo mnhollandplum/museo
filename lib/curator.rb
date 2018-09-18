@@ -34,7 +34,7 @@ class Curator
   end
 
   def artists_with_multiple_photographs
-    ids =   photos_by_artist_id.map do |id, photos|
+    ids = photos_by_artist_id.map do |id, photos|
         if photos.count > 1
           id
         end
@@ -66,6 +66,5 @@ class Curator
       photo.artist_id == id
     end
   end
-
 
 end
